@@ -1,0 +1,18 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Ensure the body takes up the full height of the viewport */
+    margin: 0; /* Remove default margin */
+}
+table {
+    border-collapse: collapse;
+}
+td {
+    width: 50px; /* Set your desired width */
+    height: 50px; /* Set your desired height */
+    border: 1px solid black;
+    text-align: center;
+    size: 50px;
+    text-transform: capitalize;
+}
