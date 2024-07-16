@@ -1,5 +1,7 @@
 let guessCount = 1;
 
+
+
 document.getElementById('guess-input').addEventListener('keypress', function(event){
     let charCode = event.charCode;
     let inputValue = event.target.value;
@@ -12,7 +14,6 @@ document.getElementById('guess-input').addEventListener('keypress', function(eve
 document.getElementById('guess-button').addEventListener('click', function(event) {
     event.preventDefault(); 
     let inputValue = document.getElementById('guess-input').value;
-    let word = "OTHER";
 
     console.log('Button clicked! Input value:', inputValue);
 
@@ -27,11 +28,11 @@ document.getElementById('guess-button').addEventListener('click', function(event
         let cell = document.querySelector(cellSelector);
 
         // If the letter is an exact match
-        if (inputValue[i].toUpperCase() === word[i]) {
+        if (inputValue[i].toUpperCase() === word[i].toUpperCase()) {
             cell.style.backgroundColor = "#00FF00";
         }
         // If the letter is in the word
-        else if (word.includes(inputValue[i].toUpperCase())) {
+        else if (word.toUpperCase().includes(inputValue[i].toUpperCase())) {
             cell.style.backgroundColor = "#FFFF00";
         }
         // If the letter is not in the word
@@ -44,6 +45,7 @@ document.getElementById('guess-button').addEventListener('click', function(event
     }
 
     guessCount++;
+    document.getElementById('guess-input').value = "";
 
 
 
@@ -51,3 +53,5 @@ document.getElementById('guess-button').addEventListener('click', function(event
         console.log("GameOver!");
     }
 });
+
+
