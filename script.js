@@ -21,17 +21,17 @@ document.getElementById('guess-button').addEventListener('click', function(event
     }
 
     // Iterate through each letter in the guess
-    for (let i = 0; i < inputValue.length+1; i++) {
+    for (let i = 0; i < inputValue.length; i++) {
         // Select the ID of the letter location
         let cellSelector = `#guess-${guessCount}-${i+1}`;
         let cell = document.querySelector(cellSelector);
 
         // If the letter is an exact match
-        if (inputValue[i] === word[i]) {
+        if (inputValue[i].toUpperCase() === word[i]) {
             cell.style.backgroundColor = "#00FF00";
         }
         // If the letter is in the word
-        else if (word.includes(inputValue[i])) {
+        else if (word.includes(inputValue[i].toUpperCase())) {
             cell.style.backgroundColor = "#FFFF00";
         }
         // If the letter is not in the word
@@ -44,6 +44,8 @@ document.getElementById('guess-button').addEventListener('click', function(event
     }
 
     guessCount++;
+
+
 
     if (guessCount === 6) {
         console.log("GameOver!");
