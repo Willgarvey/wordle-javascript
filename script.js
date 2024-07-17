@@ -106,5 +106,12 @@ document.getElementById('guess-button').addEventListener('click', function(event
     }
 });
 
+// Add event listener to the input field to detect Enter key press
+guessInput.addEventListener('keydown', (event) => {
+    if (event.key === 'Enter') {
+        document.getElementById('guess-button').click();
+    }
+});
+
 window.onload = guessInput.focus();
 
