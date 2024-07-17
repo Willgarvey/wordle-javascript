@@ -1,6 +1,13 @@
 let guessCount = 1;
 
+let guessInput = document.getElementById('guess-input')
 
+// Refocus to the input field if focus is lost
+document.addEventListener('click', (event) => {
+    if (event.target !== guessInput) {
+        guessInput.focus();
+    }
+});
 
 document.getElementById('guess-input').addEventListener('input', function(event){
     let charCode = event.charCode;
@@ -18,7 +25,7 @@ document.getElementById('guess-input').addEventListener('input', function(event)
 
     if (inputValue.length > 5){
         newInputValue = inputValue.substring(0, 5);
-        document.getElementById('guess-input').value = newInputValue;
+        guessInput.value = newInputValue;
     }
 
     // Null or undefined check
@@ -34,7 +41,7 @@ document.getElementById('guess-input').addEventListener('input', function(event)
 
 
 
-    if (inputValue.length <= 5 ||  inputValue.length > 0) {
+    if (inputValue.length < 5) {
         inputValue[inputValue.length + 1] = "";
 
         // Select the ID of the letter location to delete
@@ -43,7 +50,8 @@ document.getElementById('guess-input').addEventListener('input', function(event)
         cell.innerHTML = "";
     }
 
-    else {
+
+    else if (inputValue.length === 0) {
         // Handle null or empty inputValue
         let cellSelector = `#guess-${guessCount}-1`;
         let cell = document.querySelector(cellSelector);
@@ -57,7 +65,7 @@ document.getElementById('guess-input').addEventListener('input', function(event)
 
 document.getElementById('guess-button').addEventListener('click', function(event) {
     event.preventDefault(); 
-    let inputValue = document.getElementById('guess-input').value;
+    guessInput.value;
 
     console.log('Button clicked! Input value:', inputValue);
 
@@ -89,7 +97,7 @@ document.getElementById('guess-button').addEventListener('click', function(event
     }
 
     guessCount++;
-    document.getElementById('guess-input').value = "";
+    guessInput.value = "";
 
 
 
@@ -98,4 +106,5 @@ document.getElementById('guess-button').addEventListener('click', function(event
     }
 });
 
+window.onload = guessInput.focus();
 
