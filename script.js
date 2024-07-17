@@ -28,6 +28,11 @@ document.getElementById('guess-input').addEventListener('input', function(event)
     }
     // Now inputValue contains the sanitized value
 
+    // Check if sixth guess was already made
+    if (guessCount > 6) {
+        return;
+    }
+
     // Select the ID of the letter location
     let cellSelector = `#guess-${guessCount}-${inputValue.length}`;
     let cell = document.querySelector(cellSelector);
@@ -123,10 +128,6 @@ document.getElementById('guess-button').addEventListener('click', function(event
 
     guessCount++;
     guessInput.value = "";
-
-    if (guessCount === 6) {
-        console.log("GameOver!");
-    }
 });
 
 // Enter button event for pressing the guess button
@@ -135,9 +136,6 @@ guessInput.addEventListener('keydown', (event) => {
         document.getElementById('guess-button').click();
     }
 });
-
-// Focus on the invisible input on load
-window.onload = guessInput.focus();
 
 // Reset button event for pressing the reset button
 document.getElementById('reset-button').addEventListener('click', function(event) {
@@ -160,5 +158,8 @@ document.getElementById('reset-button').addEventListener('click', function(event
     guessCount = 1;
 
 });
+
+// Focus on the invisible input on load
+window.onload = guessInput.focus();
 
 
