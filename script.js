@@ -95,12 +95,12 @@ document.getElementById('guess-button').addEventListener('click', function(event
 
     // Check if guess is in word list
     if (!binarySearch(guessInput.value, guesses)){
-        errorMessage.style.display = 'block'; // Show the error message
+        errorMessage.style.opacity = 100; // Show the error message
         return;
     }
     
     else {
-        errorMessage.style.display = 'none'; // Hide the error message if word is found
+        errorMessage.style.opacity = 0; // Hide the error message if word is found
     }
 
     // Iterate through each letter in the guess

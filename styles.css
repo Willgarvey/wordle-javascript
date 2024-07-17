@@ -38,13 +38,7 @@ td {
 
 #error-message {
     color: red;
-    display: none; /* Hide the error message by default */
-}
-
-#guess-button {
-    padding: 10px 20px;
-    font-size: 16px;
-    cursor: pointer;
+    opacity: 0;
 }
 
 #wordle-container {
@@ -53,3 +47,37 @@ td {
     align-items: center;
     padding: 20px;
 }
+
+/* Button effects */
+
+#guess-button, #reset-button {
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    font-weight: 1000;
+    padding: 10px 20px;
+    border: 2px solid #000;
+    background-color: #fff;
+    color: #000;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    display: inline-block;
+    text-align: center;
+    margin: 10px;
+    border-radius: 5px;
+  }
+  
+  /* Hover Effects */
+  #guess-button:hover, #reset-button:hover {
+    background-color: #000;
+    color: #fff;
+  }
+  
+  /* Active State */
+  #guess-button:active, #reset-button:active {
+    background-color: #444;
+    color: #fff;
+    border-color: #444;
+  }
+  
