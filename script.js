@@ -65,11 +65,11 @@ document.getElementById('guess-input').addEventListener('input', function(event)
 
 document.getElementById('guess-button').addEventListener('click', function(event) {
     event.preventDefault(); 
-    guessInput.value;
+    inputValue = guessInput.value;
 
     console.log('Button clicked! Input value:', inputValue);
 
-    if (inputValue.length > 5) {
+    if (inputValue.length != 5) {
         return; // Exit early if input length is invalid
     }
 
