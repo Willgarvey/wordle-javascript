@@ -1,5 +1,4 @@
 let guessCount = 1;
-
 let guessInput = document.getElementById('guess-input')
 
 // Refocus to the input field if focus is lost
@@ -151,11 +150,13 @@ document.getElementById('reset-button').addEventListener('click', function(event
         td.innerHTML = '';
     });
 
-    document.getElementById('error-message').style.display = 'none';
+    document.getElementById('error-message').style.opacity = 0;
 
     word = words[Math.floor(Math.random() * words.length)];
 
     guessCount = 1;
+
+    guessInput.value = "";
 
 });
 

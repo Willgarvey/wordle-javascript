@@ -1,5 +1,7 @@
 html {
     background-color: rgb(28, 28, 28);
+    font-family: Arial, sans-serif;
+    font-weight: 1000;
 }
 
 body {
@@ -8,6 +10,17 @@ body {
     align-items: center;
     height: 100vh; /* Ensure the body takes up the full height of the viewport */
     margin: 0; /* Remove default margin */
+}
+
+h1 {
+    font-family: Arial, sans-serif;
+    color: whitesmoke;
+    font-size: 32px;
+    font-weight: 1000;
+}
+
+p {
+    color: whitesmoke;
 }
 
 table {
@@ -23,7 +36,6 @@ td {
     size: 80px;
     text-transform: capitalize;
     color: white;
-    font-weight: 1000;
 }
 
 .button-container {
@@ -39,6 +51,7 @@ td {
 #error-message {
     color: red;
     opacity: 0;
+    text-transform: uppercase;
 }
 
 #wordle-container {

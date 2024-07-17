@@ -11,6 +11,7 @@
 </head>
 <body>
     <div id="wordle-container">
+        <h1>WORDLE</h1>
         <table id="table">
             <tr id="guess-1">
                 <td id="guess-1-1"></td>
@@ -61,6 +62,13 @@
         </div>
         <input type="text" id="guess-input" class="invisible">
         <p id="error-message">Word not found in the list.</p>
+        <div id="directions-container">
+            <p>Type in a 5 letter word to guess the word</p>
+            <p>Grey letters are not in the word</p>
+            <p>Yellow letters are in the incorrect position word</p>
+            <p>Green letters are in correct position in the word</p>
+            <p>You are allows 6 attempts to guess the word</p>
+        </div>
     </div> 
 </body>
 </html>
