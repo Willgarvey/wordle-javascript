@@ -1,3 +1,7 @@
+html {
+    background-color: rgb(28, 28, 28);
+}
+
 body {
     display: flex;
     justify-content: center;
@@ -12,10 +16,12 @@ table {
 td {
     width: 50px; /* Set your desired width */
     height: 50px; /* Set your desired height */
-    border: 1px solid black;
+    border: 1px solid white;
     text-align: center;
-    size: 50px;
+    size: 80px;
     text-transform: capitalize;
+    color: white;
+    font-weight: 1000;
 }
 
 .button-container {

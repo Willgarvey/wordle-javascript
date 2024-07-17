@@ -17,18 +17,27 @@ document.getElementById('guess-input').addEventListener('input', function(event)
         event.preventDefault();
     }
 
+    // Check if the last character is not a letter (alphabetical character)
+    if (inputValue.length > 0 && !/[a-zA-Z]/.test(inputValue.charAt(inputValue.length - 1))) {
+        // Remove the last character from the input value
+        inputValue = inputValue.slice(0, -1);
+
+        // Update the input element value
+        event.target.value = inputValue;
+    }
+    // Now inputValue contains the sanitized value
+
     // Select the ID of the letter location
     let cellSelector = `#guess-${guessCount}-${inputValue.length}`;
     let cell = document.querySelector(cellSelector);
 
-    //check length of string to change board accordingly
-
+    //if input exceeds 5 trim extra letters
     if (inputValue.length > 5){
         newInputValue = inputValue.substring(0, 5);
         guessInput.value = newInputValue;
     }
 
-    // Null or undefined check
+    //part of null check
     else if (inputValue != null && inputValue.length > 0) {
         // Safe to access the last character
         cell.innerHTML = inputValue[inputValue.length - 1];
@@ -39,8 +48,6 @@ document.getElementById('guess-input').addEventListener('input', function(event)
         cell.innerHTML = "";
     }
 
-
-
     if (inputValue.length < 5) {
         inputValue[inputValue.length + 1] = "";
 
@@ -50,24 +57,18 @@ document.getElementById('guess-input').addEventListener('input', function(event)
         cell.innerHTML = "";
     }
 
-
     else if (inputValue.length === 0) {
         // Handle null or empty inputValue
         let cellSelector = `#guess-${guessCount}-1`;
         let cell = document.querySelector(cellSelector);
         cell.innerHTML = "";
     }
-
-    console.log(inputValue.length);
-
-
 });
 
+// Event when the Guess Button is clicked
 document.getElementById('guess-button').addEventListener('click', function(event) {
     event.preventDefault(); 
     inputValue = guessInput.value;
-
-    console.log('Button clicked! Input value:', inputValue);
 
     if (inputValue.length != 5) {
         return; // Exit early if input length is invalid
@@ -81,11 +82,11 @@ document.getElementById('guess-button').addEventListener('click', function(event
 
         // If the letter is an exact match
         if (inputValue[i].toUpperCase() === word[i].toUpperCase()) {
-            cell.style.backgroundColor = "#00FF00";
+            cell.style.backgroundColor = "#66D43C";
         }
         // If the letter is in the word
         else if (word.toUpperCase().includes(inputValue[i].toUpperCase())) {
-            cell.style.backgroundColor = "#FFFF00";
+            cell.style.backgroundColor = "#DEDB1E";
         }
         // If the letter is not in the word
         else {
@@ -98,8 +99,6 @@ document.getElementById('guess-button').addEventListener('click', function(event
 
     guessCount++;
     guessInput.value = "";
-
-
 
     if (guessCount === 6) {
         console.log("GameOver!");
@@ -115,3 +114,19 @@ guessInput.addEventListener('keydown', (event) => {
 
 window.onload = guessInput.focus();
 
+document.getElementById('reset-button').addEventListener('click', function(event) {
+    event.preventDefault(); 
+    // Select all td elements
+    const tds = document.querySelectorAll('td');
+
+    // Loop through each td element
+    tds.forEach(td => {
+        // Set background-color to grey
+        td.style.backgroundColor = '';
+        // Clear innerHTML
+        td.innerHTML = '';
+    });
+
+    guessCount = 1;
+
+});
