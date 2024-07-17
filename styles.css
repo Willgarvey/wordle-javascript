@@ -1,7 +1,14 @@
+@media screen and (max-width: 600px) {
+    p {
+        font-size: 14px;
+        font-weight: 100;
+    }
+}
+
 html {
     background-color: rgb(28, 28, 28);
     font-family: Arial, sans-serif;
-    font-weight: 1000;
+    color: whitesmoke;
 }
 
 body {
@@ -14,14 +21,10 @@ body {
 
 h1 {
     font-family: Arial, sans-serif;
-    color: whitesmoke;
     font-size: 32px;
     font-weight: 1000;
 }
 
-p {
-    color: whitesmoke;
-}
 
 table {
     border-collapse: collapse;
@@ -94,3 +97,17 @@ td {
     border-color: #444;
   }
   
+
+  /* Notification window*/
+
+  #notification {
+    position: fixed;
+    display: flex;
+    top: 150px;
+    width: 250px;
+    height: 100px;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.7);
+    opacity: 0;
+}

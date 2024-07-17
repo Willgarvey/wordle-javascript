@@ -27,6 +27,8 @@ document.getElementById('guess-input').addEventListener('input', function(event)
     }
     // Now inputValue contains the sanitized value
 
+    document.getElementById('error-message').style.opacity = 0;
+
     // Check if sixth guess was already made
     if (guessCount > 6) {
         return;
@@ -125,6 +127,26 @@ document.getElementById('guess-button').addEventListener('click', function(event
         cell.innerHTML = inputValue[i];
     }
 
+    console.log(guessCount);
+
+    let notification = document.getElementById('notification');
+
+    if (guessCount === 6) {
+        if (inputValue.toLowerCase() === word){
+            notification.textContent = "YOU WIN";
+        }
+        else {
+            notification.textContent = "TRY AGAIN";
+        }
+
+        document.getElementById('notification').style.opacity = 100;
+    }
+
+    if (inputValue.toLowerCase() === word){
+        notification.textContent = "YOU WIN";
+        document.getElementById('notification').style.opacity = 100;
+    }
+
     guessCount++;
     guessInput.value = "";
 });
@@ -151,6 +173,8 @@ document.getElementById('reset-button').addEventListener('click', function(event
     });
 
     document.getElementById('error-message').style.opacity = 0;
+
+    document.getElementById('notification').style.opacity= 0;
 
     word = words[Math.floor(Math.random() * words.length)];
 
