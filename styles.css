@@ -1,3 +1,8 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
 @media screen and (max-width: 600px) {
     p {
         font-size: 14px;
@@ -23,6 +28,12 @@ h1 {
     font-family: Arial, sans-serif;
     font-size: 32px;
     font-weight: 1000;
+    padding-bottom: 20px;;
+}
+
+P {
+    padding-bottom: 5px;
+    letter-spacing: .01em;
 }
 
 
@@ -44,7 +55,6 @@ td {
 .button-container {
     display: flex;
     justify-content: center;
-    padding: 10px;
 }
 
 .invisible {
