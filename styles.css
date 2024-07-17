@@ -9,10 +9,12 @@ body {
     height: 100vh; /* Ensure the body takes up the full height of the viewport */
     margin: 0; /* Remove default margin */
 }
+
 table {
     border-collapse: collapse;
     margin-bottom: 20px;
 }
+
 td {
     width: 50px; /* Set your desired width */
     height: 50px; /* Set your desired height */
@@ -30,11 +32,13 @@ td {
     padding: 10px;
 }
 
-#wordle-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 20px;
+.invisible {
+    opacity: 0;
+}
+
+#error-message {
+    color: red;
+    display: none; /* Hide the error message by default */
 }
 
 #guess-button {
@@ -43,6 +47,9 @@ td {
     cursor: pointer;
 }
 
-.invisible {
-    opacity: 0;
+#wordle-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
 }

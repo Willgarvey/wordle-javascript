@@ -9,6 +9,7 @@ document.addEventListener('click', (event) => {
     }
 });
 
+// Input change event for entering a guess
 document.getElementById('guess-input').addEventListener('input', function(event){
     let charCode = event.charCode;
     let inputValue = event.target.value;
@@ -65,13 +66,36 @@ document.getElementById('guess-input').addEventListener('input', function(event)
     }
 });
 
-// Event when the Guess Button is clicked
+// Submit guess event for pressing the guess button
 document.getElementById('guess-button').addEventListener('click', function(event) {
     event.preventDefault(); 
     inputValue = guessInput.value;
+    let errorMessage = document.getElementById('error-message');
 
     if (inputValue.length != 5) {
         return; // Exit early if input length is invalid
+    }
+
+    //binary search function to match guess word to word list
+    function binarySearch(word, guesses) {
+        let low = 0, high = guesses.length - 1;
+        while (low <= high) {
+            let mid = Math.floor((low + high) / 2);
+            if (guesses[mid] === word) return true;
+            else if (guesses[mid] < word) low = mid + 1;
+            else high = mid - 1;
+        }
+        return false;
+    }
+
+    // Check if guess is in word list
+    if (!binarySearch(guessInput.value, guesses)){
+        errorMessage.style.display = 'block'; // Show the error message
+        return;
+    }
+    
+    else {
+        errorMessage.style.display = 'none'; // Hide the error message if word is found
     }
 
     // Iterate through each letter in the guess
@@ -105,19 +129,21 @@ document.getElementById('guess-button').addEventListener('click', function(event
     }
 });
 
-// Add event listener to the input field to detect Enter key press
+// Enter button event for pressing the guess button
 guessInput.addEventListener('keydown', (event) => {
     if (event.key === 'Enter') {
         document.getElementById('guess-button').click();
     }
 });
 
+// Focus on the invisible input on load
 window.onload = guessInput.focus();
 
+// Reset button event for pressing the reset button
 document.getElementById('reset-button').addEventListener('click', function(event) {
     event.preventDefault(); 
     // Select all td elements
-    const tds = document.querySelectorAll('td');
+    let tds = document.querySelectorAll('td');
 
     // Loop through each td element
     tds.forEach(td => {
@@ -127,6 +153,12 @@ document.getElementById('reset-button').addEventListener('click', function(event
         td.innerHTML = '';
     });
 
+    document.getElementById('error-message').style.display = 'none';
+
+    word = words[Math.floor(Math.random() * words.length)];
+
     guessCount = 1;
 
 });
+
+
