@@ -134,7 +134,8 @@ document.getElementById('guess-button').addEventListener('click', function(event
             notification.textContent = "YOU WIN";
         }
         else {
-            notification.textContent = "TRY AGAIN";
+            notification.textContent = `The word was ${word.toUpperCase()}`;
+
         }
 
         document.getElementById('notification').style.opacity = 100;

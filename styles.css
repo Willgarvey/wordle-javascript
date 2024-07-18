@@ -61,9 +61,7 @@ td {
 }
 
 #error-message {
-    color: red;
     opacity: 0;
-    text-transform: uppercase;
 }
 
 #wordle-container {
