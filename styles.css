@@ -20,8 +20,8 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh; /* Ensure the body takes up the full height of the viewport */
-    margin: 0; /* Remove default margin */
+    height: 100vh;
+    margin: 0;
 }
 
 h1 {
@@ -36,15 +36,14 @@ p {
     letter-spacing: .01em;
 }
 
-
 table {
     border-collapse: collapse;
     margin-bottom: 20px;
 }
 
 td {
-    width: 50px; /* Set your desired width */
-    height: 50px; /* Set your desired height */
+    width: 50px;
+    height: 50px;
     border: 1px solid white;
     text-align: center;
     size: 80px;
