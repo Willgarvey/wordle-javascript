@@ -127,8 +127,6 @@ document.getElementById('guess-button').addEventListener('click', function(event
         cell.innerHTML = inputValue[i];
     }
 
-    console.log(guessCount);
-
     let notification = document.getElementById('notification');
 
     if (guessCount === 6) {

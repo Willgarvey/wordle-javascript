@@ -1,13 +1,13 @@
-* {
-    margin: 0;
-    padding: 0;
-}
-
 @media screen and (max-width: 600px) {
     p {
         font-size: 14px;
         font-weight: 100;
     }
+}
+
+* {
+    margin: 0;
+    padding: 0;
 }
 
 html {
@@ -31,7 +31,7 @@ h1 {
     padding-bottom: 20px;;
 }
 
-P {
+p {
     padding-bottom: 5px;
     letter-spacing: .01em;
 }
@@ -75,7 +75,6 @@ td {
 }
 
 /* Button effects */
-
 #guess-button, #reset-button {
     font-family: Arial, sans-serif;
     font-size: 16px;
@@ -94,22 +93,18 @@ td {
     border-radius: 5px;
   }
   
-  /* Hover Effects */
   #guess-button:hover, #reset-button:hover {
     background-color: #000;
     color: #fff;
   }
   
-  /* Active State */
   #guess-button:active, #reset-button:active {
     background-color: #444;
     color: #fff;
     border-color: #444;
   }
   
-
   /* Notification window*/
-
   #notification {
     position: fixed;
     display: flex;
