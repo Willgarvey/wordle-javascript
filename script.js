@@ -78,7 +78,7 @@ document.getElementById('guess-button').addEventListener('click', function(event
     inputValue = guessInput.value;
     let errorMessage = document.getElementById('error-message');
 
-    if (inputValue.length != 5) {
+    if (inputValue.length != 5 || guessCount > 6) {
         return; // Exit early if input length is invalid
     }
 
@@ -145,6 +145,7 @@ document.getElementById('guess-button').addEventListener('click', function(event
     if (inputValue.toLowerCase() === word){
         notification.textContent = "YOU WIN";
         document.getElementById('notification').style.opacity = 100;
+        guessCount = 7;
     }
 
     guessCount++;
