@@ -11,7 +11,8 @@
 </head>
 <body>
     <div id="wordle-container">
-        <h1>WORDLE</h1>
+        <h1>WORDLE UNLIMITED</h1>
+        <input type="text" id="guess-input" class="invisible">
         <table id="table">
             <tr id="guess-1">
                 <td id="guess-1-1"></td>
@@ -60,11 +61,9 @@
             <button type="button" id="guess-button">GUESS</button>
             <button type="button" id="reset-button">RESET</button>
         </div>
-        <input type="text" id="guess-input" class="invisible">
         <p id="error-message">WORD NOT FOUND</p>
         <h1>HOW TO PLAY</h1>
         <div id="directions-container">
-            
             <p>GUESS A 5 LETTER WORD</p>
             <p>GREY LETTERS ARE WRONG</p>
             <p>YELLOW LETTERS ARE MISPLACED</p>
@@ -72,7 +71,6 @@
             <p>YOU HAVE 6 ATTEMPTS</p>
         </div>
         <div id="notification">
-            YOU WIN
         </div>
     </div> 
 </body>

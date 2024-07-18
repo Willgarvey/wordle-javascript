@@ -172,16 +172,15 @@ document.getElementById('reset-button').addEventListener('click', function(event
         td.innerHTML = '';
     });
 
+    // Hide the error message and game notification
     document.getElementById('error-message').style.opacity = 0;
-
     document.getElementById('notification').style.opacity= 0;
-
+    // Pick a new word
     word = words[Math.floor(Math.random() * words.length)];
-
+    // Reset the guess count for the game logic
     guessCount = 1;
-
+    // Clear out the guess input field
     guessInput.value = "";
-
 });
 
 // Focus on the invisible input on load
