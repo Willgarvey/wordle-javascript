@@ -25,10 +25,14 @@ body {
 
 h1 {
     font-family: Arial, sans-serif;
-    font-size: 32px;
+    font-size: 24px;
     font-weight: 1000;
-    padding-bottom: 20px;;
 }
+
+h4 {
+    margin-left:80px;
+}
+
 
 p {
     padding-bottom: 5px;
@@ -37,10 +41,10 @@ p {
 
 table {
     border-collapse: collapse;
-    margin-bottom: 20px;
+    margin: 20px 0px;
 }
 
-td {
+.guess td {
     width: 50px;
     height: 50px;
     border: 1px solid white;
@@ -48,6 +52,10 @@ td {
     size: 80px;
     text-transform: capitalize;
     color: white;
+}
+
+.directions td {
+    border: none;
 }
 
 .button-container {
@@ -71,10 +79,15 @@ td {
     padding: 20px;
 }
 
+#directions-container {
+    justify-content: center;
+}
+
 #directions-table {
     width: 350px;
     border: none;
 }
+
 
 /* Button effects */
 #guess-button, #reset-button {
@@ -110,6 +123,7 @@ td {
   #notification {
     position: absolute;
     display: flex;
+    font-weight: 1000;
     top: 150px;
     width: 250px;
     height: 100px;
@@ -117,4 +131,22 @@ td {
     align-items: center;
     background-color: rgba(0, 0, 0, 0.7);
     opacity: 0;
+}
+
+#grn, #ylw, #gry {
+    width:20px;
+    height: 20px;
+    margin-left: 60px;
+}
+
+#grn {
+    background-color: green;
+}
+
+#ylw {
+    background-color: yellow;
+}
+
+#gry {
+    background-color: grey;
 }

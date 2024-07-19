@@ -14,42 +14,42 @@
         <h1>WORDLE UNLIMITED</h1>
         <input type="text" id="guess-input" class="invisible">
         <table id="table">
-            <tr id="guess-1">
+            <tr class="guess">
                 <td id="guess-1-1"></td>
                 <td id="guess-1-2"></td>
                 <td id="guess-1-3"></td>
                 <td id="guess-1-4"></td>
                 <td id="guess-1-5"></td>
             </tr>
-            <tr id="guess-2">
+            <tr class="guess">
                 <td id="guess-2-1"></td>
                 <td id="guess-2-2"></td>
                 <td id="guess-2-3"></td>
                 <td id="guess-2-4"></td>
                 <td id="guess-2-5"></td>
             </tr>
-            <tr id="guess-3">
+            <tr class="guess">
                 <td id="guess-3-1"></td>
                 <td id="guess-3-2"></td>
                 <td id="guess-3-3"></td>
                 <td id="guess-3-4"></td>
                 <td id="guess-3-5"></td>
             </tr>
-            <tr id="guess-4">
+            <tr class="guess">
                 <td id="guess-4-1"></td>
                 <td id="guess-4-2"></td>
                 <td id="guess-4-3"></td>
                 <td id="guess-4-4"></td>
                 <td id="guess-4-5"></td>
             </tr>
-            <tr id="guess-5">
+            <tr class="guess">
                 <td id="guess-5-1"></td>
                 <td id="guess-5-2"></td>
                 <td id="guess-5-3"></td>
                 <td id="guess-5-4"></td>
                 <td id="guess-5-5"></td>
             </tr>
-            <tr id="guess-6">
+            <tr class="guess">
                 <td id="guess-6-1"></td>
                 <td id="guess-6-2"></td>
                 <td id="guess-6-3"></td>
@@ -64,11 +64,22 @@
         <p id="error-message">WORD NOT FOUND</p>
         <h1>HOW TO PLAY</h1>
         <div id="directions-container">
-            <p>GUESS A 5 LETTER WORD</p>
-            <p>GREY LETTERS ARE WRONG</p>
-            <p>YELLOW LETTERS ARE MISPLACED</p>
-            <p>GREEN LETTERS ARE CORRECT</p>
-            <p>YOU HAVE 6 ATTEMPTS</p>
+            <h4>Guess a 5 letter word</h4>
+            <table id="directions-table">
+                <tr class="directions">
+                    <td><div id="grn"></div></td>
+                    <td><p>Correct letter - Correct Spot</p></td>
+                </tr>
+                <tr class="directions">
+                    <td><div id="ylw"></div></td>
+                    <td><p>Correct letter - Wrong spot</p></td>
+                </tr>
+                <tr class="directions">
+                    <td><div id="gry"></div></td>
+                    <td><p>Letter not in word</p></td>
+                </tr>
+            </table>
+            <h4>You have 6 attempts</h4>
         </div>
         <div id="notification">
         </div>

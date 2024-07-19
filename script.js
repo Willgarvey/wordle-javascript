@@ -161,13 +161,14 @@ guessInput.addEventListener('keydown', (event) => {
 // Reset button event for pressing the reset button
 document.getElementById('reset-button').addEventListener('click', function(event) {
     event.preventDefault(); 
-    // Select all td elements
-    let tds = document.querySelectorAll('td');
+
+    // Select all td elements within tr elements inside the table with id 'table'
+    let tds = document.querySelectorAll('#table tr td');
 
     // Loop through each td element
     tds.forEach(td => {
         // Set background-color to grey
-        td.style.backgroundColor = '';
+        td.style.backgroundColor = ''; // You can set the color to 'grey' if needed
         // Clear innerHTML
         td.innerHTML = '';
     });
