@@ -69,7 +69,8 @@ table {
 
 #error-message {
     opacity: 0;
-    color: yellow;
+    color: #DEDB1E;
+    font-weight: 1000;
 }
 
 #wordle-container {
@@ -140,13 +141,13 @@ table {
 }
 
 #grn {
-    background-color: green;
+    background-color: #66D43C;
 }
 
 #ylw {
-    background-color: yellow;
+    background-color: #DEDB1E;
 }
 
 #gry {
-    background-color: grey;
+    background-color: #808080;
 }
