@@ -29,8 +29,8 @@ h1 {
     font-weight: 1000;
 }
 
-h4 {
-    margin-left:90px;
+h3 {
+    margin-left:75px;
     margin-top: 20px;
 }
 
@@ -38,6 +38,7 @@ h4 {
 p {
     padding-bottom: 5px;
     letter-spacing: .01em;
+    font-size:18px;
 }
 
 table {
@@ -138,7 +139,8 @@ table {
 #grn, #ylw, #gry {
     width:20px;
     height: 20px;
-    margin-left: 60px;
+    margin-left: 45px;
+    margin-bottom:5px;
 }
 
 #grn {
